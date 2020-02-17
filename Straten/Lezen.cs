@@ -7,7 +7,10 @@ namespace Straten
 {
     class Lezen
     {
-        
+        Dictionary<string, string> Straatnamen = new Dictionary<string, string>();
+        List<string[]> strnaam = new List<string[]>();
+        string[] st = new string[500];
+
         public void BestandLezen()
         {
             string line;
@@ -15,8 +18,17 @@ namespace Straten
             {
                 while ((line = r.ReadLine()) != null)
                 {
-                    line.Split()
+                    if (!line.Contains("W")) 
+                    {
+                        strnaam.Add(line.Split(","));
+                    }
+                        
                 }
+            }
+
+            foreach(List<string[]> element in strnaam)
+            {
+
             }
         }
 
